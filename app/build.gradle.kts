@@ -2,16 +2,17 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
     namespace = "upt.paam.lab6"
-    compileSdk = 36
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "upt.paam.lab6"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         manifestPlaceholders["GOOGLE_MAPS_API_KEY"] = ""

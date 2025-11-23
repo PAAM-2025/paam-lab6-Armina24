@@ -19,8 +19,21 @@ class LocationHandler(context: Context) {
         // TODO 2: Create a LocationRequest with Priority.PRIORITY_HIGH_ACCURACY,
         //  min update distance set to 5m and update interval to 100ms.
 
+        val request = LocationRequest.Builder(
+            Priority.PRIORITY_HIGH_ACCURACY,
+            100L
+        )
+            .setMinUpdateDistanceMeters(5f)
+            .setMinUpdateIntervalMillis(100L)
+            .build()
+
         // TODO 3: Register request and callback with the fused location service client.
 
+        client.requestLocationUpdates(
+            request,
+            locationCallback,
+            null
+        )
     }
 
     fun unregisterLocationListener(locationCallback: LocationCallback) {

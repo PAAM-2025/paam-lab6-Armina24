@@ -78,6 +78,11 @@ class MainActivity : ComponentActivity() {
                         LocationComposable()
                     }
                     // TODO 2: Add a button to call getCurrentLocation for retrieving current location
+
+                    Button(onClick = { getCurrentLocation() }) {
+                        Text("Get Current Location")
+                    }
+
                 }
 
             }
@@ -114,6 +119,11 @@ class MainActivity : ComponentActivity() {
             )
         }
         // TODO 1: Create a marker and set its position from [latLngState].
+
+        Marker(
+            state = markerState,
+            title = "One Marker"
+        )
     }
 
     override fun onResume() {
@@ -148,7 +158,6 @@ class MainActivity : ComponentActivity() {
             ) {
                 return
             }
-            // TODO 3 Add a fusedLocationClient function to retrieve the current location and set the marker to point to that location
         }
     }
 
